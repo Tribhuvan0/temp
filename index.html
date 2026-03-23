@@ -9,22 +9,23 @@
     body {
       margin: 0;
       font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-      background: linear-gradient(135deg, #0f172a, #1e293b);
-      color: white;
+      background: #f8fafc;
+      color: #0f172a;
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
+      min-height: 100vh;
     }
 
     .container {
       max-width: 600px;
-      text-align: center;
+      width: 100%;
       padding: 20px;
+      text-align: center;
     }
 
     h1 {
-      font-size: 2.8rem;
+      font-size: 2.5rem;
       margin-bottom: 10px;
     }
 
@@ -33,81 +34,133 @@
     }
 
     p {
-      color: #94a3b8;
-      font-size: 1.1rem;
-      margin-bottom: 25px;
+      color: #475569;
+      font-size: 1.05rem;
     }
 
     .card {
-      background: #1e293b;
-      padding: 20px;
-      border-radius: 16px;
-      box-shadow: 0 10px 40px rgba(0,0,0,0.4);
-    }
-
-    iframe {
-      border-radius: 10px;
       background: white;
-    }
-
-    .points {
+      padding: 25px;
+      border-radius: 16px;
       margin-top: 20px;
-      text-align: left;
-      font-size: 0.95rem;
-      color: #cbd5f5;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
     }
 
-    .points div {
-      margin: 5px 0;
+    input, select {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border-radius: 8px;
+      border: 1px solid #e2e8f0;
+      font-size: 1rem;
     }
 
-    .badge {
-      margin-top: 15px;
+    button {
+      width: 100%;
+      padding: 12px;
+      background: #6366f1;
+      border: none;
+      border-radius: 8px;
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #4f46e5;
+    }
+
+    .note {
       font-size: 0.8rem;
-      color: #22c55e;
+      color: #64748b;
+      margin-top: 10px;
+    }
+
+    .section {
+      text-align: left;
+      margin-top: 30px;
+    }
+
+    .section h3 {
+      margin-bottom: 8px;
+    }
+
+    .step {
+      margin-bottom: 10px;
+      color: #334155;
+      font-size: 0.95rem;
     }
 
     .footer {
-      margin-top: 20px;
+      margin-top: 25px;
       font-size: 0.8rem;
-      color: #64748b;
+      color: #94a3b8;
     }
+
   </style>
 </head>
 
 <body>
 
-  <div class="container">
-    <h1>Your <span class="highlight">Reddit</span> knows you better.</h1>
+<div class="container">
 
-    <p>
-      Dating apps show who people pretend to be.<br>
-      We match you based on how you actually think.
-    </p>
+  <h1>Your <span class="highlight">Reddit</span> knows you better</h1>
 
-    <div class="card">
-      <iframe 
-        src="https://forms.gle/6ZXKNWhMjYXzKxge8"
-        width="100%" 
-        height="400" 
-        frameborder="0">
-      </iframe>
+  <p>
+    Dating apps show curated versions of people.<br>
+    This matches you based on how you actually spend your time.
+  </p>
 
-      <div class="badge">
-        🚀 Only first 100 users get early access
-      </div>
+  <div class="card">
+    
+    <form action="https://formspree.io/f/xwvrglzq" method="POST">
+      
+      <input type="email" name="email" placeholder="Your email" required>
+
+      <input type="text" name="reddit" placeholder="Reddit username (optional)">
+
+      <select name="intent">
+        <option>Why are you here?</option>
+        <option>Serious dating</option>
+        <option>Just exploring</option>
+        <option>Curious about personality</option>
+      </select>
+
+      <button type="submit">Join Early Access</button>
+    </form>
+
+    <div class="note">
+      Takes 10 seconds · No login required
     </div>
 
-    <div class="points">
-      <div>✅ No fake bios</div>
-      <div>✅ No curated personalities</div>
-      <div>✅ Just real behavior</div>
+    <div class="note">
+      Only public Reddit data is used. Nothing is posted on your behalf.
     </div>
 
-    <div class="footer">
-      We only analyze public Reddit activity with your permission.
-    </div>
   </div>
+
+  <div class="section">
+    <h3>How it works</h3>
+
+    <div class="step">1. You share your Reddit username (or answer a few questions)</div>
+    <div class="step">2. We analyze patterns like interests, activity, and tone</div>
+    <div class="step">3. You get a personality breakdown</div>
+    <div class="step">4. We match you with people who think like you</div>
+  </div>
+
+  <div class="section">
+    <h3>Why this is different</h3>
+
+    <div class="step">• No bios or pickup lines</div>
+    <div class="step">• No pretending to be someone else</div>
+    <div class="step">• Matches based on actual behavior</div>
+  </div>
+
+  <div class="footer">
+    Early experiment · Built to test a new way of matching people
+  </div>
+
+</div>
 
 </body>
 </html>
